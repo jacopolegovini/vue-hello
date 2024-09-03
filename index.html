@@ -11,6 +11,9 @@
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">   
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <!-- JS Vue -->
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -23,7 +26,11 @@
         <h1>
             {{message}}
         </h1>
-        <img :src="img" alt="pug">
+        <form>
+            <label for="img" class="fw-bold">Che immagine vuoi?</label>
+            <input type="text" v-model="img" v-on:keyup.enter="getImage()">
+        </form>
+        <img :src="getImage()" alt="pug" v-show="img !== ''">
     </div>
 
 
