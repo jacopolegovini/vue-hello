@@ -23,14 +23,16 @@
 </head>
 <body>
     <div id="app">
-        <h1>
-            {{message}}
-        </h1>
-        <form>
-            <label for="img" class="fw-bold">Che immagine vuoi?</label>
-            <input type="text" v-model="img" v-on:keyup.enter="getImage()">
-        </form>
-        <img :src="getImage()" alt="pug" v-show="img !== ''">
+        <div class="container">
+            <h1>
+                {{message}}
+            </h1>
+            <form>
+                <label for="img" class="fw-bold">Che immagine vuoi?</label><br>
+                <input type="text" v-model="img" v-on:keyup.prevent.enter="getImage()">
+            </form>
+            <img :src="getImage()" alt="pug" v-show="img !== ''">
+        </div>
     </div>
 
 
